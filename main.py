@@ -9,8 +9,6 @@ TOPIC = "sdk/test/python"
 
 def on_message_received(topic, payload, dup, qos, retain, **kwargs):
     print("Received message from topic '{}': {}".format(topic, payload))
-    # if received_count == cmdData.input_count:
-    #     received_all_event.set()
 
 
 def main():
@@ -32,3 +30,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
