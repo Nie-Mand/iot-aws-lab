@@ -9,7 +9,6 @@ class Config:
     cert_file = ""
     key_file = ""
     client_id = ""
-    topic = ""
 
     def __init__(self):
         config = dotenv_values(".env")
@@ -18,7 +17,6 @@ class Config:
         self.cert_file = self._load_key(config, "CERT_FILE")
         self.key_file = self._load_key(config, "KEY_FILE")
         self.client_id = self._load_key(config, "CLIENT_ID")
-        self.topic = self._load_key(config, "TOPIC")
 
     def _load_key(self, config, key):
         try:
@@ -46,8 +44,4 @@ class Config:
         # does self.client_id exists
         if self.client_id == "":
             print("CLIENT_ID is empty")
-            sys.exit(2)
-        # does self.topic exists
-        if self.topic == "":
-            print("TOPIC is empty")
             sys.exit(2)

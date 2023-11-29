@@ -1,9 +1,9 @@
 from awscrt import mqtt
 import sys
-from handler import Handler
+from handler import ConnectionHandler
 
 
-class HandlerImpl(Handler):
+class ConnectionHandlerImpl(ConnectionHandler):
 
     def get_on_connection_interrupted(self):
         def on_connection_interrupted(connection, error, **kwargs):
@@ -49,8 +49,3 @@ class HandlerImpl(Handler):
         def on_connection_closed(connection, callback_data):
             print("Connection closed")
         return on_connection_closed
-
-    def get_on_message_received(self):
-        def on_message_received(topic, payload, dup, qos, retain, **kwargs):
-            print("Received message from topic '{}': {}".format(topic, payload))
-        return on_message_received

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Handler(ABC):
+class ConnectionHandler(ABC):
 
     @abstractmethod
     def get_on_connection_interrupted(self):
@@ -21,8 +21,4 @@ class Handler(ABC):
 
     @abstractmethod
     def get_on_connection_closed(self):
-        pass
-
-    @abstractmethod
-    def get_on_message_received(self):
         pass
