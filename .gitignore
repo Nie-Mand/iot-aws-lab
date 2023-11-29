@@ -1,0 +1,14 @@
+venv
+
+*.cert.pem
+*.private.key
+*.public.key
+root-CA.crt
+*-Policy
+
+
+tmp
+
+
+root-CA.crt
+aws-iot-device-sdk-python-v2
