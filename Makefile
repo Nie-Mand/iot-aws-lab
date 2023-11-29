@@ -9,8 +9,6 @@ validate:
 	@echo -e "\033[0;32m\t- [x] THING-NAME.public.key\033[0m"
 	@echo -e "\033[0;32m\t- [x] THING-NAME-Policy\033[0m"
 
-
-
 venv:
 	@echo -e "\033[0;32m[*] Creating virtual environment...\033[0m"
 	@python3 -m venv venv
@@ -26,14 +24,14 @@ aws-iot-device-sdk-python-v2:
 awsiot:
 	@echo -e "\033[0;32m[*] Installing AWS IoT Device SDK...\033[0m"
 	@./venv/bin/pip install ./aws-iot-device-sdk-python-v2
+	@./venv/bin/pip install -r requirements.txt
 
 setup: validate venv root-CA.crt aws-iot-device-sdk-python-v2 awsiot
 	@echo -e "\033[0;32m[*] Setup complete!\033[0m"
 
-	
-dev: venv
+run: venv
 	@echo -e "\033[0;32m[*] Starting development server...\033[0m"
 	@./venv/bin/python main.py
 
 # Phonies
-.PHONY: setup dev validate awsiot
+.PHONY: setup run validate awsiot

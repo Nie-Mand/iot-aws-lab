@@ -12,3 +12,8 @@ tmp
 
 root-CA.crt
 aws-iot-device-sdk-python-v2
+
+
+.env
+
+__pycache__
